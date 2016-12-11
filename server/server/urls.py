@@ -17,15 +17,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 
-from api.views import UserViewSet
 
-
-# Determine our api routes automatically
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
