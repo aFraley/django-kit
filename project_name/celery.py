@@ -3,11 +3,11 @@ import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', '{{project_name}}.settings')
 
 from django.conf import settings  # noqa
 
-app = Celery('server')
+app = Celery('{{project_name}}')
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
